@@ -4,14 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Crash : MonoBehaviour
-{
-
-    public Text crashText;
+{        
 
     // Use this for initialization
     void Start()
     {
-        crashText.text = "";
+
     }
 
     // Update is called once per frame
@@ -22,14 +20,11 @@ public class Crash : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("crashed"))
+        if (other.gameObject.tag == "collidable")
         {
-            CrashText();
+            Vector3 dir = other.contacts[0].point - transform.position;
+            dir = -dir.normalized;
+            GetComponent<Rigidbody>().AddForce(dir * 100000);
         }
-    }
-
-    void CrashText()
-    {
-        crashText.text = "You Crashed! Game Over";
     }
 }
