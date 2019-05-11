@@ -4,4 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Scenes/small_town_america/general/Menu_Scene.unity
+    guid: eaf3471c4067935429d3b122827e0e71
+  - enabled: 1
+    path: Assets/_Scenes/small_town_america/general/Tutorial_Scene.unity
+    guid: db44d74920566af4ea50a5ee0e4e4902
+  - enabled: 1
+    path: Assets/_Scenes/small_town_america/general/demo.unity
+    guid: 97a45b56cd0e4004eb346f32d925d492
