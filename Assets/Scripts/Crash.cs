@@ -31,7 +31,7 @@ public class Crash : MonoBehaviour
         {
             Vector3 dir = other.contacts[0].point - transform.position;
             dir = -dir.normalized;
-            GetComponent<Rigidbody>().AddForce(dir * 500000);			
+            GetComponent<Rigidbody>().AddForce(dir * 250000);			
 			collisionCounter++;
 			Debug.Log("We have collided " + collisionCounter + " times!");		
 			RealisticCarController.m_verticalInput = 0;
