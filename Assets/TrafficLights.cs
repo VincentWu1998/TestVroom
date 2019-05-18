@@ -39,8 +39,6 @@ public class TrafficLights : MonoBehaviour {
     // Update is called once per frame 
     void Update ()
     {
-        Debug.LogError("I AM RUNNING UPDATES");
-
         if (Time.time >= nextUpdate)
         {
             if (Time.time >= nextUpdate)
@@ -49,7 +47,6 @@ public class TrafficLights : MonoBehaviour {
                 updateLights();
 
                 nextUpdate++;
-
             }
         }
 
@@ -67,9 +64,7 @@ public class TrafficLights : MonoBehaviour {
             foreach (Light light in reds)
             {
                 light.color = Color.red;
-                light.color = Color.Lerp(Color.red, Color.red, 8);
                 light.enabled = true;
-                Debug.LogError("RED ON");
             }
             foreach (Light light in yellows)
             {
@@ -83,7 +78,6 @@ public class TrafficLights : MonoBehaviour {
             {
                 light.color = Color.yellow;
                 light.enabled = true;
-                Debug.LogError("YELLOW ON");
             }
             foreach (Light light in greens)
             {
@@ -97,7 +91,6 @@ public class TrafficLights : MonoBehaviour {
             {
                 light.color = Color.green;
                 light.enabled = true;
-                Debug.LogError("GREEN ON");
             }
             foreach(Light light in reds)
             {
