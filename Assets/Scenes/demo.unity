@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -18838,7 +18838,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 981574746}
   m_LocalRotation: {x: -0, y: 0.024714079, z: -0, w: 0.9996946}
-  m_LocalPosition: {x: 302, y: 1.14, z: 638}
+  m_LocalPosition: {x: 302, y: 1.4, z: 638}
   m_LocalScale: {x: 2.2979665, y: 2, z: 2.3295555}
   m_Children:
   - {fileID: 333982262}
@@ -21051,7 +21051,7 @@ MonoBehaviour:
   selectedRoadRightInnerOffset: 0
   selectedCrossingMaterial: 0
   crossingTextureInfoIndex: 0
-  handleSelection: -1
+  handleSelection: 1
   positionHandleSelection: 0
   markerDirXZ: 0
   defaultCrossing: {fileID: 100000, guid: 82d1055f236419543a306cf502974500, type: 2}
@@ -21085,7 +21085,7 @@ MonoBehaviour:
   minIndent: 5.859375
   minSurrounding: 5
   maxIndentSurrounding: 50
-  terrainY: 0
+  terrainY: 0.1
   terrainDetailSplatX: 0.0390625
   terrainDetailSplatY: 0.03173828
   detailOffsetVec: {x: 0.0390625, y: 0, z: 0.03173828}
@@ -21104,7 +21104,7 @@ MonoBehaviour:
   - {fileID: 1741634535}
   terrainSplatTextures:
   - Splat 1 - grass
-  activeTerrain: {fileID: 1741634535}
+  activeTerrain: {fileID: 0}
   activeTerrainY: 0
   selectedTerrain: 0
   selectedRoadsOnly: 0
@@ -31141,6 +31141,88 @@ MeshCollider:
 Transform:
   m_PrefabParentObject: {fileID: 408844, guid: cad78765caccb034584e2d71888df418, type: 2}
   m_PrefabInternal: {fileID: 1116827633}
+--- !u!1 &1620523494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1620523498}
+  - component: {fileID: 1620523497}
+  - component: {fileID: 1620523496}
+  - component: {fileID: 1620523495}
+  m_Layer: 0
+  m_Name: Actual Road
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &1620523495
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1620523494}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &1620523496
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1620523494}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1620523497
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1620523494}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1620523498
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1620523494}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 409.54004, y: -0.15, z: 710.58954}
+  m_LocalScale: {x: 10000, y: 1, z: 10000}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1627207589
 Prefab:
   m_ObjectHideFlags: 0
