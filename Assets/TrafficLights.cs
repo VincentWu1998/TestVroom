@@ -19,6 +19,7 @@ public class TrafficLights : MonoBehaviour {
         if ( !ran )
         {
             ran = true;
+
             foreach ( Light light in this.GetComponentsInChildren<Light>())
             {
                 light.enabled = false;
@@ -63,7 +64,7 @@ public class TrafficLights : MonoBehaviour {
         {
             foreach (Light light in reds)
             {
-                light.color = Color.red;
+                light.color = Color.Lerp(Color.red, Color.red, 8);
                 light.enabled = true;
             }
             foreach (Light light in yellows)
@@ -76,7 +77,7 @@ public class TrafficLights : MonoBehaviour {
         {
             foreach(Light light in yellows)
             {
-                light.color = Color.yellow;
+                light.color = Color.Lerp(Color.yellow, Color.yellow, 8);
                 light.enabled = true;
             }
             foreach (Light light in greens)
@@ -89,7 +90,7 @@ public class TrafficLights : MonoBehaviour {
         {
             foreach(Light light in greens)
             {
-                light.color = Color.green;
+                light.color = Color.Lerp(Color.green, Color.green, 8);
                 light.enabled = true;
             }
             foreach(Light light in reds)
