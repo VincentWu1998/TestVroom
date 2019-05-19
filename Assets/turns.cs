@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class turns : MonoBehaviour {
     private string currIntersection = "";
+    public List<GameObject> arrows;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         
 	}
 	

@@ -1,54 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Crash : MonoBehaviour
-{
-    public WheelCollider frontDriverW, frontPassengerW;
-    public WheelCollider rearDriverW, rearPassengerW;
-    public Transform frontDriverT, frontPassengerT;
-    public Transform rearDriverT, rearPassengerT;
-	public int collisionCounter = 0;
-	private float waitTime = 5.0F;
-	private float nextFire = 0.0F;
-	private bool crashed = false;
-	public List<GameObject> arrows;
+public class TestTurns : MonoBehaviour {
+    public List<GameObject> arrows;
     public bool notSelected = true;
 
     // Use this for initialization
-    void Start()
-    {
-		List<GameObject> arrows = new List<GameObject>();
+    void Start () {
+        List<GameObject> arrows = new List<GameObject>();
+
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-		if (crashed == true && Time.time > nextFire) {
-			StartCoroutine(addScore ());
-			Debug.Log ("got here");
-			Debug.Log (crashed);
-			Debug.Log (collisionCounter);
-		}
-    }
-
-    void OnCollisionEnter(Collision other)
-	{
-        if (other.gameObject.tag == "collidable")
-        {
-            Vector3 dir = other.contacts[0].point - transform.position;
-            dir = -dir.normalized;
-            GetComponent<Rigidbody>().AddForce(dir * 250000);			
-			crashed = true;	
-			RealisticCarController.m_verticalInput = 0;
-            frontPassengerW.motorTorque = 0;
-            frontDriverW.motorTorque = 0;
-            rearDriverW.motorTorque = 0;
-            rearPassengerW.motorTorque = 0;			
-
-        }
-	}
 
     void OnTriggerEnter(Collider other)
     {
@@ -66,7 +28,7 @@ public class Crash : MonoBehaviour
     {
         // There should always be 3 collided arrows when we choose the arrow to randomly display
         if (other.gameObject.tag == "arrowCollidable" && arrows.Count == 3 && notSelected)
-        {
+        {            
             // randomChoice selected
             int randomChoice = Random.Range(0, arrows.Count);
             // fetch randerer
@@ -78,8 +40,8 @@ public class Crash : MonoBehaviour
     }
 
     // As we exit all the arrows, we will remove them from the list
-    private void OnTriggerExit(Collider other)
-    {
+    private void OnTriggerExit(Collider other) 
+    {    
         if (other.gameObject.tag == "arrowCollidable" && arrows.Count > 0)
         {
             for (int i = 0; i < arrows.Count; i++)
@@ -89,7 +51,7 @@ public class Crash : MonoBehaviour
                     Renderer rend = arrows[i].GetComponent<Renderer>();
                     rend.material.color = Color.white;
                     arrows.RemoveAt(i);
-
+                    
                     if (arrows.Count == 0)
                     {
                         notSelected = true;
@@ -97,14 +59,11 @@ public class Crash : MonoBehaviour
                     break;
                 }
             }
-        }
+        }        
     }
 
-    public IEnumerator addScore(){
-		collisionCounter++;
-		nextFire = Time.time + waitTime;
-		Debug.Log ("score is now " + collisionCounter);
-		crashed = false;
-		yield return new WaitForSeconds (waitTime);
+    // Update is called once per frame
+    void Update () {
+		
 	}
 }
