@@ -87,7 +87,7 @@ public class Crash : MonoBehaviour
                 if (other.gameObject.GetInstanceID() == arrows[i].GetInstanceID())
                 {
                     Renderer rend = arrows[i].GetComponent<Renderer>();
-                    rend.material.color = Color.white;
+                    rend.material = Resources.Load("Materials/Glass", typeof(Material)) as Material;
                     arrows.RemoveAt(i);
 
                     if (arrows.Count == 0)
