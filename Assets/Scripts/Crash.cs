@@ -53,7 +53,7 @@ public class Crash : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         // If we are hitting an arrow
-        if (other.gameObject.tag == "arrowCollidable")
+        if (other.gameObject.tag == "arrowCollidable" && arrows.Count < 3)
         {
             Debug.Log("ARROW has collided, we have " + arrows.Count + " Arrows HIT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             // Add collided arrows into an array
