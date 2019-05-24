@@ -65,7 +65,7 @@ public class Crash : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         // There should always be 3 collided arrows when we choose the arrow to randomly display
-        if (other.gameObject.tag == "arrowCollidable" && arrows.Count == 3 && notSelected)
+        if (other.gameObject.tag == "arrowCollidable" && arrows.Count >= 2 && notSelected)
         {
             // randomChoice selected
             int randomChoice = Random.Range(0, arrows.Count);
