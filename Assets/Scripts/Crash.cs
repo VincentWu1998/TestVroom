@@ -27,7 +27,7 @@ public class Crash : MonoBehaviour
 		List<GameObject> arrows = new List<GameObject>();
         endGameCounter = 0;
         endGameTimer = new System.Timers.Timer();
-        endGameTimer.Interval = 5000;
+        endGameTimer.Interval = 120000;
 
         endGameTimer.Elapsed += OnTimedEvent;
         endGameTimer.AutoReset = true;
