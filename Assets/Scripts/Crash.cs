@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Crash : MonoBehaviour
 {
@@ -9,17 +10,19 @@ public class Crash : MonoBehaviour
     public WheelCollider rearDriverW, rearPassengerW;
     public Transform frontDriverT, frontPassengerT;
     public Transform rearDriverT, rearPassengerT;
-	public int collisionCounter = 0;
+	public static int collisionCounter = 0;
 	private float waitTime = 5.0F;
 	private float nextFire = 0.0F;
 	private bool crashed = false;
 	public List<GameObject> arrows;
     public bool notSelected = true;
+    public int endGameCounter = 0;
 
     // Use this for initialization
     void Start()
     {
 		List<GameObject> arrows = new List<GameObject>();
+        endGameCounter = 0;
     }
 
     // Update is called once per frame
@@ -45,7 +48,8 @@ public class Crash : MonoBehaviour
             frontPassengerW.motorTorque = 0;
             frontDriverW.motorTorque = 0;
             rearDriverW.motorTorque = 0;
-            rearPassengerW.motorTorque = 0;			
+            rearPassengerW.motorTorque = 0;
+            addScore();
 
         }
 	}
@@ -74,7 +78,22 @@ public class Crash : MonoBehaviour
             //Set the main Color of the Material to green
             rend.material = Resources.Load("Materials/GreenGlass", typeof(Material)) as Material;
             notSelected = false;
+            endGameCounter = endGameCounter + 1;
+            Debug.Log("ENDGAME COUNTER IS ******************************************************" +
+                "*************************************************** " + endGameCounter);
+            if(endGameCounter >= 15)
+            {
+                Debug.Log("GAME OVER!!!");
+                endGameCounter = 0;
+                Invoke("EndGame", 3f);
+            }
+
         }
+    }
+
+    public void EndGame()
+    {
+        SceneManager.LoadScene(3);
     }
 
     // As we exit all the arrows, we will remove them from the list

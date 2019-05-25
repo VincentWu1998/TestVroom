@@ -7,3 +7,7 @@ function PlayDemo(){
 function PlayTutorial(){
 	Application.LoadLevel(1);
 }
+
+function BackToMenu(){
+	Application.LoadLevel(0);
+}
