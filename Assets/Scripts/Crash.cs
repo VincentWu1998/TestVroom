@@ -72,7 +72,7 @@ public class Crash : MonoBehaviour
             // fetch randerer
             Renderer rend = arrows[randomChoice].GetComponent<Renderer>();
             //Set the main Color of the Material to green
-            rend.material.color = Color.green;
+            rend.material = Resources.Load("Materials/GreenGlass", typeof(Material)) as Material;
             notSelected = false;
         }
     }

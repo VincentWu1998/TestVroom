@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -6879,7 +6879,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400002, guid: f2ab54f769f5e2d4ba92aa4ad917a1ff, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 149694047}
-  m_LocalRotation: {x: 0.0032329513, y: 0.7038445, z: -0.7103396, w: 0.0031753029}
+  m_LocalRotation: {x: 0.003232951, y: 0.7038445, z: -0.7103396, w: 0.0031753026}
   m_LocalPosition: {x: 172.1, y: 12.28, z: 784.31}
   m_LocalScale: {x: 0.49243024, y: 0.9902457, z: 0.028317055}
   m_Children:
@@ -10436,7 +10436,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400002, guid: f2ab54f769f5e2d4ba92aa4ad917a1ff, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 249846100}
-  m_LocalRotation: {x: 0.0032329515, y: 0.70384455, z: -0.71033967, w: 0.003175303}
+  m_LocalRotation: {x: 0.0032329513, y: 0.70384455, z: -0.71033967, w: 0.0031753029}
   m_LocalPosition: {x: 619.9, y: 12.5, z: 703.9}
   m_LocalScale: {x: 0.49243024, y: 0.9902457, z: 0.028317055}
   m_Children:
@@ -39321,7 +39321,7 @@ MonoBehaviour:
   rearDriverT: {fileID: 207373818}
   rearPassengerT: {fileID: 1329997295}
   maxSteerAngle: 30
-  motorForce: 50
+  motorForce: 25
   Brakes: 0
 --- !u!114 &981574748
 MonoBehaviour:
