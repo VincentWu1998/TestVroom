@@ -44,7 +44,7 @@ public class TrafficLights : MonoBehaviour {
         {
             if (Time.time >= nextUpdate)
             {
-                curr = (curr +1) % 12;
+                curr = (curr +1) % 15;
                 updateLights();
 
                 nextUpdate++;
@@ -60,7 +60,7 @@ public class TrafficLights : MonoBehaviour {
          * 8-12 --> red 4 sec */
         
         // Reds
-        if (curr - 8 >= 0)
+        if (curr - 11 >= 0)
         {
             foreach (Light light in reds)
             {
@@ -73,7 +73,7 @@ public class TrafficLights : MonoBehaviour {
             }
         }
         // Yellows
-        else if (curr - 5 >= 0)
+        else if (curr - 8 >= 0)
         {
             foreach(Light light in yellows)
             {
