@@ -107,6 +107,8 @@ public class Crash : MonoBehaviour
             Renderer rend = arrows[randomChoice].GetComponent<Renderer>();
             //Set the main Color of the Material to green
             rend.material = Resources.Load("Materials/GreenGlass", typeof(Material)) as Material;
+            arrows[randomChoice].GetComponent<MeshRenderer>().enabled = true;
+
             notSelected = false;
             endGameCounter = endGameCounter + 1;
             Debug.Log("ENDGAME COUNTER IS ******************************************************" +
@@ -137,6 +139,7 @@ public class Crash : MonoBehaviour
                 {
                     Renderer rend = arrows[i].GetComponent<Renderer>();
                     rend.material = Resources.Load("Materials/Glass", typeof(Material)) as Material;
+                    arrows[i].GetComponent<MeshRenderer>().enabled = false;
                     arrows.RemoveAt(i);
 
                     if (arrows.Count == 0)
