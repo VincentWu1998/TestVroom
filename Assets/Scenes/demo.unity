@@ -6170,7 +6170,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400002, guid: f2ab54f769f5e2d4ba92aa4ad917a1ff, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 149694047}
-  m_LocalRotation: {x: 0.003232953, y: 0.70384455, z: -0.71033967, w: 0.0031753045}
+  m_LocalRotation: {x: 0.003232952, y: 0.70384455, z: -0.71033967, w: 0.0031753036}
   m_LocalPosition: {x: 172.1, y: 12.28, z: 784.31}
   m_LocalScale: {x: 0.49243024, y: 0.9902457, z: 0.028317055}
   m_Children:
@@ -10705,7 +10705,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400002, guid: f2ab54f769f5e2d4ba92aa4ad917a1ff, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 249846100}
-  m_LocalRotation: {x: 0.0032329524, y: 0.7038445, z: -0.7103396, w: 0.003175304}
+  m_LocalRotation: {x: 0.0032329515, y: 0.7038445, z: -0.7103396, w: 0.003175303}
   m_LocalPosition: {x: 619.9, y: 12.5, z: 703.9}
   m_LocalScale: {x: 0.49243024, y: 0.9902457, z: 0.028317055}
   m_Children:
@@ -15610,88 +15610,6 @@ Transform:
   m_Father: {fileID: 981574752}
   m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &381331069
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 381331070}
-  - component: {fileID: 381331073}
-  - component: {fileID: 381331072}
-  - component: {fileID: 381331071}
-  m_Layer: 0
-  m_Name: Shadow Caster
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &381331070
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 381331069}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 0.602}
-  m_LocalScale: {x: 10.195584, y: 11.760384, z: -0.026347501}
-  m_Children: []
-  m_Father: {fileID: 1729729733}
-  m_RootOrder: 24
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &381331071
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 381331069}
-  m_Enabled: 1
-  m_CastShadows: 3
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!65 &381331072
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 381331069}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &381331073
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 381331069}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &382897308
 GameObject:
   m_ObjectHideFlags: 0
@@ -70081,7 +69999,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1729729729}
   m_LocalRotation: {x: -0.50000006, y: -0.5, z: -0.5, w: 0.49999997}
-  m_LocalPosition: {x: 18.22696, y: 0.8982773, z: -149.04407}
+  m_LocalPosition: {x: 18.22696, y: -1.87, z: -149.04407}
   m_LocalScale: {x: 0.91988486, y: 0.9655098, z: 4.8345184}
   m_Children:
   - {fileID: 244260757}
@@ -70108,7 +70026,6 @@ Transform:
   - {fileID: 1331466821}
   - {fileID: 530123518}
   - {fileID: 727735094}
-  - {fileID: 381331070}
   m_Father: {fileID: 173993016}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
