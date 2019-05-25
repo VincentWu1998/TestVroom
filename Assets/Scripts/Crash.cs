@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Timers;
 
 public class Crash : MonoBehaviour
 {
@@ -17,12 +18,21 @@ public class Crash : MonoBehaviour
 	public List<GameObject> arrows;
     public bool notSelected = true;
     public int endGameCounter = 0;
+    private static Timer endGameTimer;
+    public static bool endGameBool = false;
 
     // Use this for initialization
     void Start()
     {
 		List<GameObject> arrows = new List<GameObject>();
         endGameCounter = 0;
+        endGameTimer = new System.Timers.Timer();
+        endGameTimer.Interval = 5000;
+
+        endGameTimer.Elapsed += OnTimedEvent;
+        endGameTimer.AutoReset = true;
+        
+
     }
 
     // Update is called once per frame
@@ -33,7 +43,27 @@ public class Crash : MonoBehaviour
 			Debug.Log ("got here");
 			Debug.Log (crashed);
 			Debug.Log (collisionCounter);
-		}
+            endGameTimer.Enabled = true;
+        }
+
+        if(endGameBool)
+        {
+            EndGame();
+            endGameBool = false;
+        }
+        
+
+    }
+
+    private static void OnTimedEvent(object sender, ElapsedEventArgs e)
+    { 
+       if(RealisticCarController.carSpeed <= 0.5)
+        {
+            Debug.Log("ENDING GAME DUE TO INACTIVITY OR CRASH..................");
+            endGameTimer.Enabled = false;
+            Crash.endGameBool = true;
+            
+        }
     }
 
     void OnCollisionEnter(Collision other)
@@ -49,7 +79,7 @@ public class Crash : MonoBehaviour
             frontDriverW.motorTorque = 0;
             rearDriverW.motorTorque = 0;
             rearPassengerW.motorTorque = 0;
-            addScore();
+           // addScore();
 
         }
 	}
@@ -91,7 +121,7 @@ public class Crash : MonoBehaviour
         }
     }
 
-    public void EndGame()
+    public static void EndGame()
     {
         SceneManager.LoadScene(3);
     }
