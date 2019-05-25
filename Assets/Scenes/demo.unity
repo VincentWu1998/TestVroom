@@ -6978,7 +6978,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400002, guid: f2ab54f769f5e2d4ba92aa4ad917a1ff, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 149694047}
-  m_LocalRotation: {x: 0.0032329457, y: 0.7038445, z: -0.7103396, w: 0.0031752973}
+  m_LocalRotation: {x: 0.0032329452, y: 0.7038445, z: -0.7103396, w: 0.0031752968}
   m_LocalPosition: {x: -786.8949, y: 8.88631, z: -270.7049}
   m_LocalScale: {x: 0.49243078, y: 0.9902464, z: 0.028317062}
   m_Children:
@@ -10504,7 +10504,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400002, guid: f2ab54f769f5e2d4ba92aa4ad917a1ff, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 249846100}
-  m_LocalRotation: {x: 0.0032329455, y: 0.7038445, z: -0.7103396, w: 0.003175297}
+  m_LocalRotation: {x: 0.003232945, y: 0.7038445, z: -0.7103396, w: 0.0031752966}
   m_LocalPosition: {x: -339.09485, y: 9.10631, z: -351.11487}
   m_LocalScale: {x: 0.4924301, y: 0.9902459, z: 0.028317055}
   m_Children:
@@ -39342,7 +39342,7 @@ MonoBehaviour:
   rearDriverT: {fileID: 207373818}
   rearPassengerT: {fileID: 1329997295}
   maxSteerAngle: 30
-  motorForce: 25
+  motorForce: 35
   Brakes: 0
 --- !u!114 &981574748
 MonoBehaviour:
