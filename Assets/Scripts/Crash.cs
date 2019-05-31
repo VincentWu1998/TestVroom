@@ -11,7 +11,12 @@ public class Crash : MonoBehaviour
     public WheelCollider rearDriverW, rearPassengerW;
     public Transform frontDriverT, frontPassengerT;
     public Transform rearDriverT, rearPassengerT;
-	public static int collisionCounter = 0;
+    public Sprite LTurnSprite;
+    public Sprite NTurnSprite;
+    public Sprite RTurnSprite;
+    public Sprite CTurnSprite;
+
+    public static int collisionCounter = 0;
 	private float waitTime = 5.0F;
 	private float nextFire = 0.0F;
 	private bool crashed = false;
@@ -20,6 +25,8 @@ public class Crash : MonoBehaviour
     public int endGameCounter = 0;
     private static Timer endGameTimer;
     public static bool endGameBool = false;
+
+
 
     // Use this for initialization
     void Start()
@@ -107,7 +114,24 @@ public class Crash : MonoBehaviour
             Renderer rend = arrows[randomChoice].GetComponent<Renderer>();
             //Set the main Color of the Material to green
             rend.material = Resources.Load("Materials/GreenGlass", typeof(Material)) as Material;
-            arrows[randomChoice].GetComponent<MeshRenderer>().enabled = true;
+
+            //arrows[randomChoice].GetComponent<MeshRenderer>().enabled = true;
+
+            if (rend.name == "LTurn")
+            {
+                GameObject.Find("DirectionDisplay").GetComponent<Image>().sprite = LTurnSprite;
+                Debug.LogError("SET TO LEFT: " + GameObject.Find("DirectionDisplay").GetComponent<Image>().sprite + " --- " + NTurnSprite + " " + LTurnSprite + " " + RTurnSprite);
+            }
+            else if (rend.name == "NoTurn")
+            {
+                GameObject.Find("DirectionDisplay").GetComponent<Image>().sprite = NTurnSprite;
+                Debug.LogError("SET TO NONE: " + GameObject.Find("DirectionDisplay").GetComponent<Image>().sprite + " --- " + NTurnSprite + " " + LTurnSprite + " " + RTurnSprite);
+            }
+            else if (rend.name == "RTurn")
+            {
+                GameObject.Find("DirectionDisplay").GetComponent<Image>().sprite = RTurnSprite;
+                Debug.LogError("SET TO RIGHT " + GameObject.Find("DirectionDisplay").GetComponent<Image>().sprite + " --- " + NTurnSprite + " " + LTurnSprite + " " + RTurnSprite);
+            }
 
             notSelected = false;
             endGameCounter = endGameCounter + 1;
@@ -141,6 +165,8 @@ public class Crash : MonoBehaviour
                     rend.material = Resources.Load("Materials/Glass", typeof(Material)) as Material;
                     arrows[i].GetComponent<MeshRenderer>().enabled = false;
                     arrows.RemoveAt(i);
+
+                    GameObject.Find("DirectionDisplay").GetComponent<Image>().sprite = NTurnSprite;
 
                     if (arrows.Count == 0)
                     {
