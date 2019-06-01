@@ -11,7 +11,7 @@ public class EndGameScript : MonoBehaviour {
         GameObject.Find("ScoreValue").GetComponent<Text>().text = "" + (10 - Crash.collisionCounter);
         GameObject.Find("CollisionValue").GetComponent<Text>().text = "" + Crash.collisionCounter;
         GameObject.Find("TurnsMissedValue").GetComponent<Text>().text = "" + (Crash.wentOfftrackCounter);
-
+        GameObject.Find("overSpeedCount").GetComponent<Text>().text = "" + (RealisticCarController.overSpeedCounter);
 
     }
 	
