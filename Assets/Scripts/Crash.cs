@@ -151,7 +151,7 @@ public class Crash : MonoBehaviour
             endGameCounter = endGameCounter + 1;
             Debug.Log("ENDGAME COUNTER IS ******************************************************" +
                 "*************************************************** " + endGameCounter);
-            if(endGameCounter >= 15)
+            if(endGameCounter >= 8)
             {
                 Debug.Log("GAME OVER!!!");
                 endGameCounter = 0;
