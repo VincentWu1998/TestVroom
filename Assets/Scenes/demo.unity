@@ -6978,7 +6978,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400002, guid: f2ab54f769f5e2d4ba92aa4ad917a1ff, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 149694047}
-  m_LocalRotation: {x: 0.0032329387, y: 0.70384455, z: -0.71033967, w: 0.0031752903}
+  m_LocalRotation: {x: 0.0032329382, y: 0.7038445, z: -0.7103396, w: 0.0031752898}
   m_LocalPosition: {x: -786.8949, y: 8.88631, z: -270.7049}
   m_LocalScale: {x: 0.49243078, y: 0.9902464, z: 0.028317062}
   m_Children:
@@ -10504,7 +10504,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400002, guid: f2ab54f769f5e2d4ba92aa4ad917a1ff, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 249846100}
-  m_LocalRotation: {x: 0.0032329385, y: 0.70384455, z: -0.71033967, w: 0.00317529}
+  m_LocalRotation: {x: 0.003232938, y: 0.7038445, z: -0.7103396, w: 0.0031752896}
   m_LocalPosition: {x: -339.09485, y: 9.10631, z: -351.11487}
   m_LocalScale: {x: 0.4924301, y: 0.9902459, z: 0.028317055}
   m_Children:
@@ -11644,7 +11644,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 1
+  m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
   m_AllowMSAA: 1
@@ -21391,7 +21391,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
+  m_TargetDisplay: 1
   m_TargetEye: 3
   m_HDR: 0
   m_AllowMSAA: 1

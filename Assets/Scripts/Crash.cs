@@ -19,12 +19,15 @@ public class Crash : MonoBehaviour
     public static int collisionCounter = 0;
 	private float waitTime = 5.0F;
 	private float nextFire = 0.0F;
-	private bool crashed = false;
+	public static bool crashed = false;
 	public List<GameObject> arrows;
     public bool notSelected = true;
     public int endGameCounter = 0;
     private static Timer endGameTimer;
     public static bool endGameBool = false;
+    public static int wentOfftrackCounter = 0;
+    public static bool enterTrigger = false;
+    public static bool stayTrigger = false;
 
 
 
@@ -34,7 +37,7 @@ public class Crash : MonoBehaviour
 		List<GameObject> arrows = new List<GameObject>();
         endGameCounter = 0;
         endGameTimer = new System.Timers.Timer();
-        endGameTimer.Interval = 120000;
+        endGameTimer.Interval = 10000;
 
         endGameTimer.Elapsed += OnTimedEvent;
         endGameTimer.AutoReset = true;
@@ -58,19 +61,26 @@ public class Crash : MonoBehaviour
             EndGame();
             endGameBool = false;
         }
+
+        /*if(enterTrigger && (stayTrigger == false))
+        {
+            wentOfftrackCounter = wentOfftrackCounter + 1;
+        }*/
         
 
     }
 
     private static void OnTimedEvent(object sender, ElapsedEventArgs e)
     { 
-       if(RealisticCarController.carSpeed <= 0.5)
+       if(RealisticCarController.carSpeed <= 0.01)
         {
             Debug.Log("ENDING GAME DUE TO INACTIVITY OR CRASH..................");
             endGameTimer.Enabled = false;
             Crash.endGameBool = true;
+           
             
         }
+        endGameTimer.Enabled = false;
     }
 
     void OnCollisionEnter(Collision other)
@@ -86,6 +96,7 @@ public class Crash : MonoBehaviour
             frontDriverW.motorTorque = 0;
             rearDriverW.motorTorque = 0;
             rearPassengerW.motorTorque = 0;
+           
            // addScore();
 
         }
@@ -99,6 +110,7 @@ public class Crash : MonoBehaviour
             Debug.Log("ARROW has collided, we have " + arrows.Count + " Arrows HIT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             // Add collided arrows into an array
             arrows.Add(other.gameObject);
+            enterTrigger = true;
         }
     }
 
@@ -108,6 +120,8 @@ public class Crash : MonoBehaviour
         // There should always be 3 collided arrows when we choose the arrow to randomly display
         if (other.gameObject.tag == "arrowCollidable" && arrows.Count >= 2 && notSelected)
         {
+            stayTrigger = true;
+
             // randomChoice selected
             int randomChoice = Random.Range(0, arrows.Count);
             // fetch randerer
@@ -137,14 +151,16 @@ public class Crash : MonoBehaviour
             endGameCounter = endGameCounter + 1;
             Debug.Log("ENDGAME COUNTER IS ******************************************************" +
                 "*************************************************** " + endGameCounter);
-            if(endGameCounter >= 15)
+            if(endGameCounter >= 3)
             {
                 Debug.Log("GAME OVER!!!");
                 endGameCounter = 0;
-                Invoke("EndGame", 3f);
+                //Invoke("EndGame", 1);
+                SceneManager.LoadScene(3);
             }
 
         }
+        
     }
 
     public static void EndGame()
